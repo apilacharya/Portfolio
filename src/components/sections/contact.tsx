@@ -59,11 +59,22 @@ export function Contact() {
 
     try {
       await toast.promise(
-        // Simulate API call
-        new Promise((resolve) => setTimeout(resolve, 2000)),
+        fetch("/api/contact", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formState),
+        }).then(async (res) => {
+          if (!res.ok) {
+            const error = await res.json();
+            throw new Error(error.message || "Failed to send message");
+          }
+          return res.json();
+        }),
         {
           loading: "Sending message...",
-          success: "Message sent successfully!",
+          success: "Message sent successfully! I'll get back to you soon.",
           error: "Failed to send message. Please try again.",
         }
       );

@@ -84,15 +84,13 @@ export function Header() {
                 className="relative"
               >
                 <Button
-                  variant={
-                    activeSection === item.href.slice(1) ? "default" : "ghost"
-                  }
+                  variant="ghost"
                   className={cn(
-                    "relative font-medium transition-all duration-300",
+                    "relative font-medium transition-all duration-300 px-4",
                     activeSection === item.href.slice(1)
-                      ? "bg-purple-soft/10 text-purple-soft dark:bg-purple-dark/10 dark:text-purple-dark"
-                      : "text-foreground/90 hover:text-purple-soft dark:hover:text-purple-dark",
-                    "hover:bg-purple-soft/10 dark:hover:bg-purple-dark/10"
+                      ? "bg-purple-500/10 text-purple-500 dark:bg-purple-400/20 dark:text-purple-400"
+                      : "text-foreground hover:text-purple-500 dark:hover:text-purple-400",
+                    "hover:bg-purple-500/10 dark:hover:bg-purple-400/20"
                   )}
                 >
                   {item.label}
@@ -100,8 +98,8 @@ export function Header() {
                     className={cn(
                       "absolute -bottom-[2px] left-0 right-0 h-[2px]",
                       activeSection === item.href.slice(1)
-                        ? "bg-purple-soft dark:bg-purple-dark"
-                        : "bg-purple-soft/50 dark:bg-purple-dark/50"
+                        ? "bg-purple-500 dark:bg-purple-400"
+                        : "bg-purple-500/50 dark:bg-purple-400/50"
                     )}
                     initial={false}
                     animate={{
@@ -156,11 +154,11 @@ export function Header() {
                     variant="ghost"
                     className={cn(
                       "w-full justify-start font-medium transition-all duration-300",
-                      "hover:bg-purple-soft/10 hover:text-purple-soft hover:translate-x-1",
-                      "dark:hover:bg-purple-dark/10 dark:hover:text-purple-dark",
+                      "hover:bg-purple-500/10 hover:text-purple-500 hover:translate-x-1",
+                      "dark:hover:bg-purple-400/20 dark:hover:text-purple-400",
                       activeSection === item.href.slice(1)
-                        ? "text-purple-soft dark:text-purple-dark bg-purple-soft/5"
-                        : "text-foreground/90"
+                        ? "bg-purple-500/10 text-purple-500 dark:bg-purple-400/20 dark:text-purple-400"
+                        : "text-foreground"
                     )}
                   >
                     {item.label}

@@ -35,17 +35,6 @@ export function Footer() {
 
           {/* Credits */}
           <div className="flex flex-col items-center justify-center gap-2 text-sm text-muted-foreground">
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="flex items-center space-x-1.5"
-            >
-              <span>Built with</span>
-              <Heart className="w-4 h-4 text-purple-soft" />
-              <span>and</span>
-              <Coffee className="w-4 h-4 text-purple-soft" />
-            </motion.div>
             <motion.p
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
