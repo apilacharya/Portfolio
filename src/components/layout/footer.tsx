@@ -1,6 +1,6 @@
 "use client";
 
-import { Github, Heart, Coffee } from "lucide-react";
+import { Github} from "lucide-react";
 import { motion } from "framer-motion";
 
 export function Footer() {
