@@ -2,33 +2,151 @@
 
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
+import {
+  Code2,
+  Blocks,
+  FileCode2,
+  Layers,
+  Database,
+  Server,
+  Gitlab,
+  Braces,
+  Frame,
+  Box,
+  Github,
+  VideoIcon,
+  Cloud,
+  Upload,
+  PenTool,
+  MoveUpRight,
+} from "lucide-react";
 
 const skillCategories = [
   {
     title: "Frontend",
+    icon: <Frame className="w-6 h-6 text-purple-soft/50" />,
     skills: [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "TailwindCSS",
-      "Framer Motion",
-      "HTML/CSS",
+      {
+        name: "Next.js",
+        icon: (
+          <MoveUpRight className="w-5 h-5 text-purple-soft group-hover:text-purple-soft/90 transition-transform group-hover:rotate-12" />
+        ),
+      },
+      {
+        name: "React",
+        icon: (
+          <Frame className="w-5 h-5 text-purple-soft group-hover:text-purple-soft/90 transition-transform group-hover:rotate-180" />
+        ),
+      },
+      {
+        name: "TypeScript",
+        icon: (
+          <FileCode2 className="w-5 h-5 text-purple-soft group-hover:text-purple-soft/90 transition-transform group-hover:scale-110" />
+        ),
+      },
+      {
+        name: "TailwindCSS",
+        icon: (
+          <PenTool className="w-5 h-5 text-purple-soft group-hover:text-purple-soft/90 transition-transform group-hover:-rotate-12" />
+        ),
+      },
+      {
+        name: "Framer Motion",
+        icon: (
+          <Box className="w-5 h-5 text-purple-soft group-hover:text-purple-soft/90 transition-transform group-hover:scale-110" />
+        ),
+      },
+      {
+        name: "HTML/CSS",
+        icon: (
+          <Code2 className="w-5 h-5 text-purple-soft group-hover:text-purple-soft/90 transition-transform group-hover:translate-x-1" />
+        ),
+      },
     ],
   },
   {
     title: "Backend",
+    icon: <Server className="w-6 h-6 text-purple-soft/50" />,
     skills: [
-      "Node.js",
-      "Express",
-      "REST APIs",
-      "GraphQL",
-      "MongoDB",
-      "PostgreSQL",
+      {
+        name: "Node.js",
+        icon: (
+          <Server className="w-5 h-5 text-purple-soft group-hover:text-purple-soft/90 transition-transform group-hover:scale-110" />
+        ),
+      },
+      {
+        name: "Express",
+        icon: (
+          <Blocks className="w-5 h-5 text-purple-soft group-hover:text-purple-soft/90 transition-transform group-hover:rotate-12" />
+        ),
+      },
+      {
+        name: "REST APIs",
+        icon: (
+          <Layers className="w-5 h-5 text-purple-soft group-hover:text-purple-soft/90 transition-transform group-hover:translate-y-[-2px]" />
+        ),
+      },
+      {
+        name: "GraphQL",
+        icon: (
+          <Braces className="w-5 h-5 text-purple-soft group-hover:text-purple-soft/90 transition-transform group-hover:scale-110" />
+        ),
+      },
+      {
+        name: "MongoDB",
+        icon: (
+          <Database className="w-5 h-5 text-purple-soft group-hover:text-purple-soft/90 transition-transform group-hover:-rotate-12" />
+        ),
+      },
+      {
+        name: "PostgreSQL",
+        icon: (
+          <Database className="w-5 h-5 text-purple-soft group-hover:text-purple-soft/90 transition-transform group-hover:rotate-12" />
+        ),
+      },
     ],
   },
   {
     title: "Tools & Others",
-    skills: ["Git", "GitHub", "VS Code", "Docker", "AWS", "Vercel"],
+    icon: <Box className="w-6 h-6 text-purple-soft/50" />,
+    skills: [
+      {
+        name: "Git",
+        icon: (
+          <Gitlab className="w-5 h-5 text-purple-soft group-hover:text-purple-soft/90 transition-transform group-hover:scale-110" />
+        ),
+      },
+      {
+        name: "GitHub",
+        icon: (
+          <Github className="w-5 h-5 text-purple-soft group-hover:text-purple-soft/90 transition-transform group-hover:rotate-180" />
+        ),
+      },
+      {
+        name: "VS Code",
+        icon: (
+          <VideoIcon className="w-5 h-5 text-purple-soft group-hover:text-purple-soft/90 transition-transform group-hover:translate-x-1" />
+        ),
+      },
+      {
+        name: "Docker",
+        icon: (
+          <Box className="w-5 h-5 text-purple-soft group-hover:text-purple-soft/90 transition-transform group-hover:rotate-45" />
+        ),
+      },
+      {
+        name: "AWS",
+        icon: (
+          <Cloud className="w-5 h-5 text-purple-soft group-hover:text-purple-soft/90 transition-transform group-hover:translate-y-[-2px]" />
+        ),
+      },
+      {
+        name: "Vercel",
+        icon: (
+          <Upload className="w-5 h-5 text-purple-soft group-hover:text-purple-soft/90 transition-transform group-hover:translate-y-[-2px]" />
+        ),
+      },
+    ],
   },
 ];
 
@@ -72,49 +190,58 @@ const skillVariants = {
 
 export function Skills() {
   return (
-    <section id="skills" className="py-16 px-4">
+    <section id="skills" className="py-24 px-4">
       <motion.div
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
         variants={containerVariants}
-        className="container mx-auto"
+        className="container mx-auto max-w-6xl"
       >
-        <motion.h2
-          variants={categoryVariants}
-          className="text-3xl font-bold mb-8 text-center"
-        >
-          Skills & Technologies
-        </motion.h2>
+        <div className="text-center space-y-4 mb-16">
+          <motion.h2
+            variants={categoryVariants}
+            className="text-3xl md:text-4xl font-bold text-zinc-900 dark:text-white"
+          >
+            Skills and Technologies
+          </motion.h2>
+          <motion.div
+            variants={categoryVariants}
+            className="h-1 w-20 mx-auto bg-gradient-to-r from-purple-soft to-purple-dark rounded-full"
+          />
+        </div>
 
         <motion.div
           variants={containerVariants}
           className="grid md:grid-cols-3 gap-6"
         >
-          {" "}
           {skillCategories.map((category) => (
             <motion.div key={category.title} variants={categoryVariants}>
-              <Card>
+              <Card className="h-full backdrop-blur-sm border border-purple-soft/10 hover:border-purple-soft/20 transition-all duration-300 hover:shadow-lg hover:shadow-purple-soft/5 bg-gradient-to-br from-background/80 via-background to-purple-gradient/5">
                 <CardContent className="p-6">
                   <motion.h3
                     variants={skillVariants}
-                    className="text-xl font-semibold mb-4"
+                    className="text-xl font-semibold mb-6 flex items-center gap-2 text-foreground"
                   >
-                    {category.title}
+                    {category.icon}
+                    <span>{category.title}</span>
                   </motion.h3>
 
                   <motion.div
                     variants={containerVariants}
-                    className="grid grid-cols-2 gap-2"
+                    className="grid grid-cols-2 gap-3"
                   >
                     {category.skills.map((skill) => (
                       <motion.div
-                        key={skill}
+                        key={skill.name}
                         variants={skillVariants}
                         whileHover="hover"
-                        className="p-2 bg-muted rounded-md text-sm text-center transition-colors hover:bg-muted/80"
+                        className="flex items-center gap-2 p-2 rounded-lg bg-background/40 hover:bg-purple-soft/10 transition-all duration-300 group backdrop-blur-sm"
                       >
-                        {skill}
+                        {skill.icon}
+                        <span className="text-sm font-medium text-muted-foreground group-hover:text-purple-soft transition-colors">
+                          {skill.name}
+                        </span>
                       </motion.div>
                     ))}
                   </motion.div>

@@ -4,6 +4,7 @@ import "./globals.css";
 import "./smooth-scroll.css";
 import { ThemeProvider } from "next-themes";
 import { Header } from "@/components/layout/header";
+import { Footer } from "@/components/layout/footer";
 import { Toaster } from "@/components/ui/sonner";
 
 const geistSans = Geist({
@@ -49,7 +50,8 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Header />
-          {children}
+          <main>{children}</main>
+          <Footer />
           <Toaster />
         </ThemeProvider>
       </body>

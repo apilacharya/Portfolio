@@ -59,7 +59,8 @@ You are assisting in the development of Apil Acharya's portfolio website built u
 - Tailwind CSS with shadcn/ui
 - `motion/react` for animations
 - Vercel for deployment
-
+- Use pnpm for package management
+- Use `lucide-react` for icons
 
 ## KEY ARCHITECTURAL PRINCIPLES
 
@@ -73,7 +74,6 @@ You are assisting in the development of Apil Acharya's portfolio website built u
 - If the component is too large, break it down into smaller components by creating a new file for each component
 - Group similar components together in a folder inside `src/components`
 - Ensure components are reusable and maintainable and make components smaller and generic
-- all chatbot logic should so inside `src/components/bot` folder
 - avoid using unnecessary colors pallete and use only black and white with some color accents
 
 2. Performance:

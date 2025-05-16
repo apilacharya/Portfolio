@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { Menu, X } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const menuItems = [
   { href: "#about", label: "About" },
@@ -62,31 +63,57 @@ export function Header() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className="fixed top-0 left-0 right-0 z-50 border-b bg-background/80 backdrop-blur-sm"
+      className="fixed top-0 left-0 right-0 z-50 border-b bg-background/95 backdrop-blur-md"
     >
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
-          <Link href="/" className="text-xl font-bold">
-            Apil
+          <Link href="/" className="relative group flex items-center">
+            <span className="text-xl font-bold tracking-wider">
+              A<span className="text-purple-soft">R</span>A
+            </span>
+            <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-purple-soft transition-all duration-300 group-hover:w-full" />
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-6">
+          <nav className="hidden md:flex items-center gap-4">
             {menuItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={(e) => handleClick(e, item.href)}
+                className="relative"
               >
                 <Button
                   variant={
                     activeSection === item.href.slice(1) ? "default" : "ghost"
                   }
-                  className={
-                    activeSection === item.href.slice(1) ? "bg-muted" : ""
-                  }
+                  className={cn(
+                    "relative font-medium transition-all duration-300",
+                    activeSection === item.href.slice(1)
+                      ? "bg-purple-soft/10 text-purple-soft dark:bg-purple-dark/10 dark:text-purple-dark"
+                      : "text-foreground/90 hover:text-purple-soft dark:hover:text-purple-dark",
+                    "hover:bg-purple-soft/10 dark:hover:bg-purple-dark/10"
+                  )}
                 >
                   {item.label}
+                  <motion.span
+                    className={cn(
+                      "absolute -bottom-[2px] left-0 right-0 h-[2px]",
+                      activeSection === item.href.slice(1)
+                        ? "bg-purple-soft dark:bg-purple-dark"
+                        : "bg-purple-soft/50 dark:bg-purple-dark/50"
+                    )}
+                    initial={false}
+                    animate={{
+                      width:
+                        activeSection === item.href.slice(1) ? "100%" : "0%",
+                      opacity: activeSection === item.href.slice(1) ? 1 : 0,
+                    }}
+                    transition={{
+                      duration: 0.3,
+                      ease: "easeInOut",
+                    }}
+                  />
                 </Button>
               </Link>
             ))}
@@ -99,44 +126,51 @@ export function Header() {
             <Button
               variant="ghost"
               size="icon"
+              className="hover:bg-purple-soft/10"
               onClick={() => setIsOpen(!isOpen)}
             >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
+              {isOpen ? <X /> : <Menu />}
             </Button>
           </div>
         </div>
-
-        {/* Mobile Menu */}
-        <AnimatePresence>
-          {isOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              className="md:hidden"
-            >
-              <nav className="flex flex-col gap-2 pb-4">
-                {menuItems.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    onClick={(e) => handleClick(e, item.href)}
-                  >
-                    <Button
-                      variant="ghost"
-                      className={`w-full justify-start ${
-                        activeSection === item.href.slice(1) ? "bg-muted" : ""
-                      }`}
-                    >
-                      {item.label}
-                    </Button>
-                  </Link>
-                ))}
-              </nav>
-            </motion.div>
-          )}
-        </AnimatePresence>
       </div>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.2 }}
+            className="absolute top-16 left-0 right-0 border-b bg-background/95 backdrop-blur-md md:hidden"
+          >
+            <nav className="container mx-auto px-4 py-4 flex flex-col gap-2">
+              {menuItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={(e) => handleClick(e, item.href)}
+                >
+                  <Button
+                    variant="ghost"
+                    className={cn(
+                      "w-full justify-start font-medium transition-all duration-300",
+                      "hover:bg-purple-soft/10 hover:text-purple-soft hover:translate-x-1",
+                      "dark:hover:bg-purple-dark/10 dark:hover:text-purple-dark",
+                      activeSection === item.href.slice(1)
+                        ? "text-purple-soft dark:text-purple-dark bg-purple-soft/5"
+                        : "text-foreground/90"
+                    )}
+                  >
+                    {item.label}
+                  </Button>
+                </Link>
+              ))}
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.header>
   );
 }

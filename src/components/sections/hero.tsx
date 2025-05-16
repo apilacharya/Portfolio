@@ -18,6 +18,20 @@ const staggerChildren = {
 };
 
 export function Hero() {
+  const scrollToAbout = () => {
+    const aboutSection = document.getElementById("about");
+    if (aboutSection) {
+      const offset = 80; // Account for fixed header
+      const elementPosition = aboutSection.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.scrollY - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <section className="flex min-h-screen items-center justify-center px-4">
       <motion.div
@@ -69,9 +83,10 @@ export function Hero() {
             repeat: Infinity,
             repeatType: "reverse",
           }}
-          className="pt-8"
+          className="pt-8 cursor-pointer"
+          onClick={scrollToAbout}
         >
-          <svg
+          <motion.svg
             width="24"
             height="24"
             viewBox="0 0 24 24"
@@ -80,10 +95,12 @@ export function Hero() {
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="mx-auto"
+            className="mx-auto text-purple-soft hover:text-purple-dark transition-colors duration-200"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
           >
             <path d="M12 5v14M19 12l-7 7-7-7" />
-          </svg>
+          </motion.svg>
         </motion.div>
       </motion.div>
     </section>
