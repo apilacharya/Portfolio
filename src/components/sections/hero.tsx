@@ -103,7 +103,10 @@ export function Hero() {
           variants={fadeUpVariants}
           className="flex justify-center gap-4"
         >
-          <Link href="#projects">
+          <Link
+            href="https://docs.google.com/document/d/12TyXHFWljq-8g4W1pI0iMLhBuOi5KF0WIncih4WJgAY/edit?usp=sharing"
+            target="_blank"
+          >
             <Button className="transition-transform hover:scale-105">
               View Resume
             </Button>
