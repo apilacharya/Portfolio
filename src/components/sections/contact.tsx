@@ -79,7 +79,7 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="py-24 px-4 bg-gradient-to-b from-background to-purple-gradient/20"
+      className="py-18 px-4 bg-gradient-to-b from-background to-purple-gradient/20"
     >
       <motion.div
         initial="hidden"

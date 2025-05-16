@@ -3,16 +3,18 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { SectionBackground } from "@/components/ui/section-background";
 
 const fadeUpVariants = {
   hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
 
 const staggerChildren = {
+  hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.1,
     },
   },
 };
@@ -33,16 +35,58 @@ export function Hero() {
   };
 
   return (
-    <section className="flex min-h-screen items-center justify-center px-4">
+    <section className="flex min-h-screen items-center justify-center px-4 relative overflow-hidden">
+      <SectionBackground variant="purple" />
+
+      {/* Floating decorative elements */}
+      <motion.div
+        className="absolute hidden lg:block"
+        animate={{
+          x: [-20, 20, -20],
+          y: [-15, 15, -15],
+          rotate: [0, 10, 0],
+        }}
+        transition={{
+          duration: 8,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+        style={{
+          top: "25%",
+          left: "15%",
+        }}
+      >
+        <div className="w-32 h-32 rounded-full bg-gradient-to-br from-purple-500/10 to-blue-500/10 blur-xl" />
+      </motion.div>
+
+      <motion.div
+        className="absolute hidden lg:block"
+        animate={{
+          x: [20, -20, 20],
+          y: [15, -15, 15],
+          rotate: [0, -10, 0],
+        }}
+        transition={{
+          duration: 8,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+        style={{
+          top: "30%",
+          right: "15%",
+        }}
+      >
+        <div className="w-24 h-24 rounded-full bg-gradient-to-br from-blue-500/10 to-purple-500/10 blur-xl" />
+      </motion.div>
       <motion.div
         variants={staggerChildren}
         initial="hidden"
         animate="visible"
-        className="text-center space-y-6"
+        className="text-center space-y-10 relative"
       >
         <motion.h1
           variants={fadeUpVariants}
-          className="text-4xl md:text-6xl font-bold tracking-tight"
+          className="text-4xl md:text-6xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-br from-foreground to-foreground/80 pb-1"
         >
           Hi, I&apos;m Apil Raj Acharya
         </motion.h1>
@@ -51,8 +95,8 @@ export function Hero() {
           variants={fadeUpVariants}
           className="text-lg md:text-xl text-muted-foreground max-w-[600px] mx-auto"
         >
-          Full Stack Developer specializing in building exceptional digital
-          experiences with Next.js, React, and Node.js
+          Specializing in building exceptional digital experiences with Next.js,
+          React, and Node.js
         </motion.p>
 
         <motion.div
@@ -61,7 +105,7 @@ export function Hero() {
         >
           <Link href="#projects">
             <Button className="transition-transform hover:scale-105">
-              View Projects
+              View Resume
             </Button>
           </Link>
           <Link href="#contact">
@@ -83,7 +127,7 @@ export function Hero() {
             repeat: Infinity,
             repeatType: "reverse",
           }}
-          className="pt-8 cursor-pointer"
+          className="absolute left-1/2 -translate-x-1/2 cursor-pointer text-muted-foreground hover:text-muted-foreground/80 transition-colors"
           onClick={scrollToAbout}
         >
           <motion.svg
@@ -95,11 +139,9 @@ export function Hero() {
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="mx-auto text-purple-soft hover:text-purple-dark transition-colors duration-200"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
           >
-            <path d="M12 5v14M19 12l-7 7-7-7" />
+            <path d="M7 13l5 5 5-5" />
+            <path d="M7 6l5 5 5-5" />
           </motion.svg>
         </motion.div>
       </motion.div>
