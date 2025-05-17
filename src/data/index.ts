@@ -1,6 +1,6 @@
 export const projects = [
   {
-    title: "Ticket Bounty",
+    title: "BountiFy",
     description:
       "A modern ticketing platform built with Next.js 14, featuring server actions, authentication, and real-time notifications. Helps users discover and book events with a seamless checkout experience.",
     tech: [
@@ -12,8 +12,8 @@ export const projects = [
       "MongoDB",
       "Clerk Auth",
     ],
-    github: "https://github.com/apilacharya/Ticket-Bounty",
-    live: "https://road-to-next-pearl.vercel.app/",
+    github: "https://github.com/apilacharya/bountify",
+    live: "https://bountify-git-master-apil-acharyas-projects.vercel.app/",
     image: "/project1.png",
   },
   {
