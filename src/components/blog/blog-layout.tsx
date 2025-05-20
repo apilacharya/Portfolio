@@ -10,7 +10,7 @@ const fadeIn = {
 };
 
 interface BlogLayoutProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 export function BlogLayout({ children }: BlogLayoutProps) {
@@ -19,12 +19,12 @@ export function BlogLayout({ children }: BlogLayoutProps) {
       variants={fadeIn}
       initial="hidden"
       animate="visible"
-      className="min-h-screen bg-background"
+      className=" bg-background"
     >
-      <div className="container mx-auto px-4">
-        <div className="py-8">
+      <div className="container ">
+        <div className="py-4">
           <Link
-            href="/blog"
+            href="/blogs"
             className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
             <ChevronLeft className="h-4 w-4 mr-1" />

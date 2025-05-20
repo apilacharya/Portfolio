@@ -7,6 +7,7 @@ import path from "path";
 import matter from "gray-matter";
 import { compileMDX } from "next-mdx-remote/rsc";
 import { MDXContent } from "@/components/blog/mdx-content";
+import { BlogLayout } from "@/components/blog/blog-layout";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -44,11 +45,7 @@ export default async function BlogPost({ params }: Props) {
   }
 
   // Read MDX file
-  const mdxFilePath = path.join(
-    process.cwd(),
-    "content/blog",
-    `${slug}.mdx`
-  );
+  const mdxFilePath = path.join(process.cwd(), "content/blog", `${slug}.mdx`);
   let mdxSource;
 
   try {
@@ -66,8 +63,12 @@ export default async function BlogPost({ params }: Props) {
 
   return (
     <article className="py-24 relative">
+      
       <div className="container mx-auto px-4">
+        
         <div className="max-w-3xl mx-auto">
+        <BlogLayout></BlogLayout>
+
           <div className="mb-8 text-center">
             <h1 className="text-3xl md:text-4xl font-bold mb-4">
               {post.title}

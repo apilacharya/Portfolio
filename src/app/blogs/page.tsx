@@ -103,7 +103,7 @@ export default async function BlogPage({ searchParams }: Props) {
             </p>
           </div>
           <Link
-            href="/#blog"
+            href="/"
             className="group inline-flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
             <ChevronLeft className="h-4 w-4 mr-1 transition-transform group-hover:-translate-x-1" />
