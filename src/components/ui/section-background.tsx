@@ -37,37 +37,6 @@ export function SectionBackground({
 
   return (
     <div className={cn("absolute inset-0 overflow-hidden", className)}>
-      {/* Grid pattern with gradient overlay */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-grid-pattern opacity-[0.03]" />
-        <div
-          className={cn(
-            "absolute inset-0 bg-gradient-to-b",
-            gradients[variant].grid
-          )}
-        />
-      </div>
-
-      {/* Base gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-background/80" />
-
-      {/* Animated orbs */}
-      <motion.div
-        className={cn(
-          "absolute w-[500px] h-[500px] rounded-full blur-3xl",
-          "-top-40 -right-20",
-          `bg-gradient-to-br ${gradients[variant].orb1}`
-        )}
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.3, 0.5, 0.3],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: "linear",
-        }}
-      />
       <motion.div
         className={cn(
           "absolute w-[500px] h-[500px] rounded-full blur-3xl",

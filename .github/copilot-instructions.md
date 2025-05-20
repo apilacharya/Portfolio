@@ -11,6 +11,7 @@ The webside is minimalisitc with modern theme system.
 ## Required Sections in Portfolio Site
 1. **About**: A detailed description of my background, skills, and experience.
 2. **Projects**: A showcase of my projects with links to live demos and source code.
+3. **Blog**: A section for sharing articles, tutorials, and insights related to web development.
 3. **Skills**: A list of my technical skills and proficiencies.
 4. **Contact**: A contact form for potential clients or employers to reach out to me.
 
@@ -106,3 +107,4 @@ When implementing features:
 8. Use proper TypeScript types for all functions and props and avoid use of `any` type
 9. Never use `use client` on `page.tsx` files and avoid using `framer-motion` on `page.tsx` files
 10. Please make sure SEO and performance are top-notch since its high ranking portfolio website
+11. For blog section use `mdx` format and use `@next/mdx` package for parsing mdx files. The blog section shall have card view with image, title, short description and date with read more for each blog where user can click and read the full blog. If multiple card of blog is in blog section then use `react-slick` for slider. The blog section shall be responsive and mobile friendly. The blog section shall have a search bar to search the blogs. The blog section shall have a filter to filter the blogs by category. The blog section shall have a pagination to paginate the blogs. The blog section shall have a sort by date and title

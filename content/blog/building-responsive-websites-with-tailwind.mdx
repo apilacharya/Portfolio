@@ -1,0 +1,60 @@
+---
+title: Building Responsive Websites with Tailwind CSS
+description: Learn how to create beautiful, responsive websites using Tailwind CSS with practical examples and best practices.
+date: "2024-02-15"
+category: Web Development
+author:
+  name: Apil Raj Acharya
+  avatar: /images/avatar.jpg
+---
+
+# Building Responsive Websites with Tailwind CSS
+
+Tailwind CSS has revolutionized the way we build modern websites. In this article, we'll explore how to create responsive, maintainable, and beautiful websites using Tailwind CSS.
+
+## Why Tailwind CSS?
+
+Tailwind CSS provides a utility-first approach to styling, which means:
+
+- No more context switching between files
+- Faster development process
+- Highly customizable design system
+- Smaller bundle sizes with PurgeCSS
+
+## Getting Started
+
+First, install Tailwind CSS in your project:
+
+```bash
+npm install tailwindcss postcss autoprefixer
+npx tailwindcss init
+```
+
+## Best Practices
+
+Here are some best practices to follow when using Tailwind CSS:
+
+1. **Use Custom Components**
+   Extract commonly used patterns into components to maintain consistency.
+
+2. **Responsive Design**
+   Utilize Tailwind's responsive modifiers to create mobile-first designs:
+
+   ```jsx
+   <div className="text-sm md:text-base lg:text-lg">
+     Responsive text that scales with screen size
+   </div>
+   ```
+
+3. **Dark Mode**
+   Implement dark mode with Tailwind's dark modifier:
+
+   ```jsx
+   <div className="bg-white dark:bg-gray-800">
+     Content that adapts to dark mode
+   </div>
+   ```
+
+## Conclusion
+
+Tailwind CSS provides a powerful toolset for building modern websites. By following these best practices, you can create beautiful, responsive websites efficiently.

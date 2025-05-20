@@ -1,0 +1,70 @@
+---
+title: Complete Guide to Next.js App Router
+description: Explore the new App Router in Next.js 13+ and learn how to build modern web applications with server components.
+date: "2024-05-15"
+category: Next.js
+author:
+  name: Apil Raj Acharya
+  avatar: /project1.png
+  bio: Full Stack Developer
+---
+
+# Complete Guide to Next.js App Router
+
+Next.js App Router represents a paradigm shift in how we build React applications. This guide will help you understand the key concepts and best practices.
+
+## What is App Router?
+
+The App Router is Next.js's new routing system built on React Server Components. It provides:
+
+- First-class support for React Server Components
+- Built-in data fetching
+- Nested layouts and routes
+- Improved performance through streaming
+
+## Key Features
+
+### 1. Server Components
+
+```jsx
+// app/page.tsx
+export default async function Home() {
+  const data = await getData(); // This runs on the server!
+  return <h1>{data.title}</h1>;
+}
+```
+
+### 2. Nested Layouts
+
+```jsx
+// app/layout.tsx
+export default function RootLayout({ children }) {
+  return (
+    <html>
+      <body>{children}</body>
+    </html>
+  );
+}
+```
+
+### 3. Data Fetching
+
+Next.js 13+ simplifies data fetching with built-in functions:
+
+```jsx
+async function getData() {
+  const res = await fetch("https://api.example.com/data");
+  return res.json();
+}
+```
+
+## Best Practices
+
+1. Use Server Components by default
+2. Client Components when needed (interactivity)
+3. Colocate data fetching with components
+4. Leverage streaming for improved UX
+
+## Conclusion
+
+The App Router is a powerful tool that helps build better React applications. Understanding these concepts will help you make the most of Next.js's capabilities.
