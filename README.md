@@ -1,37 +1,137 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio Website
 
-## Getting Started
+A modern, responsive portfolio website built with Next.js 15, TypeScript, and TailwindCSS. This portfolio showcases my skills, projects, and experience in fullstack web development.
 
-First, run the development server:
+## 🌟 Features
+
+- **Modern Tech Stack**: Built with Next.js 15, TypeScript, and TailwindCSS
+- **Server Components**: Leverages React Server Components (RSC) for optimal performance
+- **Dark Mode**: Seamless theme switching with next-themes
+- **Responsive Design**: Mobile-first approach ensuring perfect display across all devices
+- **Blog Section**: MDX-powered blog with search, filtering, and pagination
+- **Interactive UI**: Smooth animations with Framer Motion
+- **UI Components**: Beautiful, accessible components using shadcn/ui
+- **Type Safety**: Full TypeScript support with strict mode enabled
+- **Performance Optimized**: Built with performance best practices
+
+## 🛠️ Tech Stack
+
+- [Next.js 15](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [Shadcn/UI](https://ui.shadcn.com/)
+- [Framer Motion](https://www.framer.com/motion/)
+- [MDX](https://mdxjs.com/)
+- [pnpm](https://pnpm.io/)
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18.17 or later
+- pnpm (recommended) or npm
+
+### Installation
+
+1. Clone the repository
+2. Install dependencies:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Create a `.env.local` file:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+cp .env.example .env.local
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Start the development server:
 
-## Learn More
+```bash
+pnpm dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Visit `http://localhost:3000` to see the site.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📁 Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+/public/        # Static assets
+/src/
+    /app/         # Next.js app directory with pages
+    /api/         # API routes
+    /components/  # Reusable components
+    /styles/      # Global styles
+    /lib/         # Utility functions
+    /hooks/       # Custom hooks
+    /data/        # Static data and content
+    /content/     # MDX blog posts
+```
 
-## Deploy on Vercel
+## 📝 Blog System
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The blog system uses MDX for content management:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# Portfolio
+- Write blog posts in MDX format in `/content/blog/`
+- Add blog images in `/public/blog/`
+- Support for code syntax highlighting
+- Automatic table of contents generation
+- Category-based filtering
+- Search functionality
+- Responsive image optimization
+
+## 🎨 Customization
+
+### Theme
+
+Modify the theme in `tailwind.config.ts`:
+
+```typescript
+theme: {
+  extend: {
+    colors: {
+      // Your custom colors
+    }
+  }
+}
+```
+
+### Components
+
+Custom components are built using shadcn/ui and can be modified in `/src/components/ui/`.
+
+## 📱 Performance
+
+The website achieves optimal performance through:
+
+- React Server Components
+- Image optimization
+- Route prefetching
+- Proper caching strategies
+- Code splitting
+- Minimal client-side JavaScript
+
+## 🚀 Deployment
+
+The site is optimized for deployment on Vercel:
+
+1. Push your code to GitHub
+2. Import your repository on Vercel
+3. Configure your environment variables
+4. Deploy!
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🤝 Contact
+
+Apil Acharya
+Portfolio: [Your Portfolio URL]
+LinkedIn: [Your LinkedIn]
+GitHub: [Your GitHub]
+
+---
+
+Built with ❤️ by Apil Acharya
