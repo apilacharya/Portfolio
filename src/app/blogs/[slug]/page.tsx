@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  const url = `https://apil-raj-acharya.vercel.app/blogs/${slug}`;
+  const url = `https://www.apilacharya.com.np/blogs/${slug}`;
 
   return {
     title: `${post.title} - Apil Raj Acharya's Blog`,

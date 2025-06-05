@@ -23,13 +23,13 @@ export const metadata: Metadata = {
     description:
       "Articles and insights about web development, React, Next.js, and more.",
     type: "website",
-    url: "https://apil-raj-acharya.vercel.app/blogs",
-    siteName: "Apil Raj Acharya Portfolio",
+    url: "https://www.apilacharya.com.np/blogs",
+    siteName: "Apil Raj Acharya",
     images: [
       {
-        url: "/opengraph-image.png",
-        width: 1200,
-        height: 630,
+        url: "../opengraph-image.png",
+        width: 600,
+        height: 600,
         alt: "Blog - Apil Raj Acharya",
       },
     ],
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     title: "Blog - Apil Raj Acharya",
     description:
       "Articles and insights about web development, React, Next.js, and more.",
-    images: ["/opengraph-image.png"],
+    images: ["../opengraph-image.png"],
   },
 };
 
