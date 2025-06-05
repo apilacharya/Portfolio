@@ -23,6 +23,8 @@ export const metadata: Metadata = {
     description:
       "Articles and insights about web development, React, Next.js, and more.",
     type: "website",
+    url: "https://apil-raj-acharya.vercel.app/blogs",
+    siteName: "Apil Raj Acharya Portfolio",
     images: [
       {
         url: "/opengraph-image.png",

@@ -18,6 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://apil-raj-acharya.vercel.app"),
   title: "Apil Raj Acharya - Full Stack Developer",
   description:
     "Full Stack Developer specializing in Next.js, React, TypeScript, and Node.js",
@@ -31,6 +32,40 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Apil Raj Acharya" }],
   creator: "Apil Raj Acharya",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "192x192", type: "image/png" },
+    ],
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://apil-raj-acharya.vercel.app",
+    title: "Apil Raj Acharya - Full Stack Developer",
+    description:
+      "Full Stack Developer specializing in Next.js, React, TypeScript, and Node.js",
+    siteName: "Apil Raj Acharya Portfolio",
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Apil Raj Acharya - Full Stack Developer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Apil Raj Acharya - Full Stack Developer",
+    description:
+      "Full Stack Developer specializing in Next.js, React, TypeScript, and Node.js",
+    images: ["/opengraph-image.png"],
+  },
 };
 
 export default function RootLayout({

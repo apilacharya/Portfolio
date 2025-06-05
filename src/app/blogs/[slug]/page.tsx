@@ -24,9 +24,35 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
+  const url = `https://apil-raj-acharya.vercel.app/blogs/${slug}`;
+
   return {
     title: `${post.title} - Apil Raj Acharya's Blog`,
     description: post.description,
+    openGraph: {
+      type: "article",
+      locale: "en_US",
+      url,
+      title: post.title,
+      description: post.description,
+      siteName: "Apil Raj Acharya Portfolio",
+      images: [
+        {
+          url: post.image,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+      publishedTime: post.date,
+      authors: [post.author.name],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.description,
+      images: [post.image],
+    },
   };
 }
 
@@ -63,11 +89,9 @@ export default async function BlogPost({ params }: Props) {
 
   return (
     <article className="py-24 relative">
-      
       <div className="container mx-auto px-4">
-        
         <div className="max-w-3xl mx-auto">
-        <BlogLayout></BlogLayout>
+          <BlogLayout></BlogLayout>
 
           <div className="mb-8 text-center">
             <h1 className="text-3xl md:text-4xl font-bold mb-4">
