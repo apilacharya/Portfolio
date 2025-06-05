@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://apil-raj-acharya.vercel.app"),
+  metadataBase: new URL("https://www.apilacharya.com.np"),
   title: "Apil Raj Acharya - Full Stack Developer",
   description:
     "Full Stack Developer specializing in Next.js, React, TypeScript, and Node.js",
@@ -45,14 +45,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://apil-raj-acharya.vercel.app",
+    url: "https://www.apilacharya.com.np",
     title: "Apil Raj Acharya - Full Stack Developer",
     description:
       "Full Stack Developer specializing in Next.js, React, TypeScript, and Node.js",
     siteName: "Apil Raj Acharya Portfolio",
     images: [
       {
-        url: "/opengraph-image.png",
+        url: "./opengraph-image.png",
         width: 1200,
         height: 630,
         alt: "Apil Raj Acharya - Full Stack Developer",
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     title: "Apil Raj Acharya - Full Stack Developer",
     description:
       "Full Stack Developer specializing in Next.js, React, TypeScript, and Node.js",
-    images: ["/opengraph-image.png"],
+    images: ["./opengraph-image.png"],
   },
 };
 
