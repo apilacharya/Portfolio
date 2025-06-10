@@ -10,7 +10,7 @@ export const projects = [
       "Prisma",
       "Stripe",
       "MongoDB",
-      "Clerk Auth",
+      "Lucia Auth",
     ],
     github: "https://github.com/apilacharya/bountify",
     live: "https://bountify-git-master-apil-acharyas-projects.vercel.app/",
